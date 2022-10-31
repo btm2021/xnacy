@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'xnacy',
     htmlAttrs: {
-     
+
     },
     meta: [
       { charset: 'utf-8' },
@@ -18,9 +18,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
+      { src: '/charting_library/charting_library.standalone.js' },
       { src: '/datafeeds/udf/dist/polyfills.js' },
       { src: '/datafeeds/udf/dist/bundle.js' }
-
     ]
   },
 
