@@ -599,12 +599,13 @@
 
                     </b-row>
                 </b-modal>
-                <b-modal ok-only hide-footer scrollable size="xl" title="Phân tích" id="m-phantichsymbol">
+                <b-modal @show="setPhanTich()" ok-only hide-footer scrollable size="xl" title="Phân tích"
+                    id="m-phantichsymbol">
                     <b-row style="color:black" class="h-50">
                         <b-col class="h-50">
-                            <b-embed type="iframe" aspect="16by9" src="https://baotm.duckdns.org/b" allowfullscreen>
+                            <b-embed v-if="linkphantich" type="iframe" aspect="16by9" :src="linkphantich"
+                                allowfullscreen>
                             </b-embed>
-
                         </b-col>
                     </b-row>
                 </b-modal>
@@ -655,6 +656,13 @@ export default {
     },
     methods: {
         //account
+        setPhanTich() {
+            let name = this.currentSymbol;
+            let timeframe = "15m";
+            let type = "future"
+            let url = `https://baotm.duckdns.org/plot?name=${name}&timeframe=15m&type=future`
+            this.linkphantich = url
+        },
         handleOkChangeAccountMaster() {
             // let link = 'http://localhost:3000/' + 'acc';
             // this.$axios.post(link, {
@@ -959,11 +967,10 @@ export default {
                     }
                 })
                 this.rawExchangeSymbol = data.data.symbols;
-                let logWS = new WebSocket("ws://15.235.140.236:3000/ws")
-                logWS.onmessage = (evt) => {
-                    var received_msg = evt.data;
-
-                }
+                // let logWS = new WebSocket("ws://15.235.140.236:3000/ws")
+                // logWS.onmessage = (evt) => {
+                //     var received_msg = evt.data;
+                // }
                 let markPriceWS = new WebSocket("wss://fstream.binance.com/ws/!markPrice@arr@1s");
                 markPriceWS.onmessage = (evt) => {
                     var received_msg = evt.data;
@@ -1238,6 +1245,7 @@ export default {
     },
     data() {
         return {
+            linkphantich: null,
             realTimePrice: [],
             nameAccountMaster: null,
             accountMaster: null,
