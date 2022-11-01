@@ -18,7 +18,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://charting-library.tradingview-widget.com/datafeeds/udf/dist/bundle.js' }
+      { src: 'datafeeds/udf/dist/bundle.js' }
     ]
   },
 
