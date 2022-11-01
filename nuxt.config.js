@@ -18,7 +18,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'datafeeds/udf/dist/bundle.js' }
+
+      { src: 'polyfills.js' },
+      { src: 'bundle.js' }
     ]
   },
 
