@@ -1232,8 +1232,8 @@ export default {
 
         this.dataReady = true;
         this.$nextTick(() => {
-            this.eh = this.$refs.tdvCol.clientHeight + 100 + "px";
-            this.ew = this.$refs.tdvCol.clientWidth - 30 + "px"
+            this.eh = (this.$refs.tdvCol.clientHeight||500) + 100 + "px";
+            this.ew = (this.$refs.tdvCol.clientWidth||500) - 30 + "px"
         });
 
         this.favList = this.loadFav();
