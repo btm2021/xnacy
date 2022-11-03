@@ -10,6 +10,7 @@
                         <b-dropdown-item href="#">Tình Trạng </b-dropdown-item>
                         <b-dropdown-item v-b-modal.m-tongthitruong href="#">Tổng thị trường </b-dropdown-item>
                         <b-dropdown-item v-b-modal.m-chisochung href="#">Chỉ số chung Crypto </b-dropdown-item>
+                        <b-dropdown-item v-b-modal.m-backtest href="#">Backtest thông số </b-dropdown-item>
                         <b-dropdown-item v-b-modal.m-heatmap href="#">HeatMap </b-dropdown-item>
                         <b-dropdown-item v-b-modal.m-livetrans href="#">Theo Dõi Giao Dịch </b-dropdown-item>
                         <b-dropdown-item v-b-modal.m-lichkinhte href="#">Lịch kinh tế </b-dropdown-item>
@@ -173,7 +174,7 @@
 
                 </b-col>
 
-                <b-col class="w-100 h-100" sm="12" md="12" lg="3" xl="3">
+                <b-col class="w-100 h-100" style="font-size:12px" sm="12" md="12" lg="3" xl="3">
                     <div>
                         <b-row style="height:50vh">
                             <b-col cols="12">
@@ -633,6 +634,14 @@
 
                     </b-row>
                 </b-modal>
+                <b-modal ok-only hide-footer scrollable size="xl" title="Backtest" id="m-backtest">
+                    <b-row class="h-50">
+                        <b-col cols="12">
+                            <b-embed src="backtest" />
+                        </b-col>
+
+                    </b-row>
+                </b-modal>
             </div>
 
         </div>
@@ -641,6 +650,7 @@
 </template>
 
 <script>
+
 
 export default {
     head() {
@@ -1232,8 +1242,8 @@ export default {
 
         this.dataReady = true;
         this.$nextTick(() => {
-            this.eh = (this.$refs.tdvCol.clientHeight||500) + 100 + "px";
-            this.ew = (this.$refs.tdvCol.clientWidth||500) - 30 + "px"
+            this.eh = (this.$refs.tdvCol.clientHeight || 500) + 100 + "px";
+            this.ew = (this.$refs.tdvCol.clientWidth || 500) - 30 + "px"
         });
 
         this.favList = this.loadFav();
