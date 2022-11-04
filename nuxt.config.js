@@ -18,7 +18,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js' },
       { src: 'polyfills.js' },
       { src: 'bundle.js' }
     ]
@@ -34,10 +33,6 @@ export default {
     },
     {
       src: '~/plugins/vuewindow.js', mode: 'client',
-    },
-    {
-      src: '~/plugins/lightweightchart.js', mode: 'client',
-      ssr: false
     }
   ],
 
