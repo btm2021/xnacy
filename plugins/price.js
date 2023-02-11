@@ -36,7 +36,7 @@ export default ({ app, store }, inject) => {
         let item = listSymbol.find(i => i.symbol === symbol)
         if (item) {
             pricePrecision = item.pricePrecision
-        } 
+        }
 
         return parseFloat(String(price.toFixed(pricePrecision)))
 
@@ -48,7 +48,7 @@ export default ({ app, store }, inject) => {
             var received_msg = evt.data;
             let rawMarkPrice = JSON.parse(received_msg);
             store.commit('exchangeInfo/setRealtimePrice', rawMarkPrice)
-
+            window.realtime = rawMarkPrice
         }
         markPriceWS.onopen = (event) => {
             $nuxt.$makeToast("Kết nối websocket thành công", "success")
