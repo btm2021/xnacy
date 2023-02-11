@@ -14,15 +14,22 @@
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.19.3",
-    "lightweight-charts": "^3.8.0",
+    "install": "^0.13.0",
+    "klinecharts": "^9.0.0-alpha7",
+    "lightweight-charts": "^4.0.0",
+    "lodash": "^4.17.21",
     "nuxt": "^2.15.8",
+    "nuxt-socket-io": "^2.0.3",
     "pm2": "^5.2.2",
     "pubnub-vue": "^1.0.1",
     "vue": "^2.6.14",
+    "vue-lodash": "^2.1.2",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "vue-trading-view": "^1.0.1",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "websocket": "^1.0.34",
+    "websocket-stream": "^5.5.2"
   },
   "devDependencies": {}
 }

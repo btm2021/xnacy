@@ -1,6 +1,5 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -19,7 +18,8 @@ export default {
     ],
     script: [
       { src: 'polyfills.js' },
-      { src: 'bundle.js' }
+      { src: 'bundle.js' },
+   
     ]
   },
 
@@ -33,6 +33,10 @@ export default {
     },
     {
       src: '~/plugins/vuewindow.js', mode: 'client',
+    }
+    ,
+    {
+      src: '~/plugins/price.js', mode: 'client',
     }
   ],
 
@@ -51,6 +55,7 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-socket-io'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
