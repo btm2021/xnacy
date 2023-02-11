@@ -30,14 +30,13 @@ export default ({ app, store }, inject) => {
         //get precion in store and format
         //tìm trong store
         //state.exchangeInfo.listSymbol
+        price = parseFloat(price)
         let pricePrecision = 4;
         let listSymbol = store.state.exchangeInfo.listSymbol
         let item = listSymbol.find(i => i.symbol === symbol)
         if (item) {
             pricePrecision = item.pricePrecision
-        } else {
-
-        }
+        } 
 
         return parseFloat(String(price.toFixed(pricePrecision)))
 

@@ -176,12 +176,12 @@
 
                 </b-col>
 
-                <b-col class="w-100 h-100" style="font-size:12px" sm="12" md="12" lg="3" xl="3">
+                <b-col class="w-100 h-100" style="font-size:8px" sm="12" md="12" lg="3" xl="3">
                     <div>
-                        <b-row style="height:50vh">
+                        <b-row style="height:100vh;font-size:8px">
                             <b-col cols="12">
                                 <b-table sticky-header="50vh" head-variant="warning" :fields="fields" class="myTable"
-                                    style="font-size:10px;text-align: center; color:white !important"
+                                    style="font-size:10px !important;text-align: center; color:white !important"
                                     :items="currentDataList" show-empty small responsive>
                                     <template #cell(name)="data">
                                         <span @click="currentSymbol = data.item.name" class="symName">{{
@@ -559,8 +559,8 @@ volume: 9604.9873 */
                             barcount: _data.mybot89.signalBegin,
                             score: this.calcScore(_data, i.id),
                             timeframe: i.timeframe,
-                            t1: $nuxt.$formatPrice(i.id,_data.mybot89.t1),
-                            t2: $nuxt.$formatPrice(i.idm,_data.mybot89.t2),
+                            t1: $nuxt.$formatPrice(i.id, _data.mybot89.t1),
+                            t2: $nuxt.$formatPrice(i.idm, _data.mybot89.t2),
                         }
 
                         newData.push(objectData)
